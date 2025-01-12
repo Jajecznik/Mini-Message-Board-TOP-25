@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Mini Message Board</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+
+  <a href="/new">
+    <button class="main-btn">Add new message</button>
+  </a>
+
+  <div class="messages-container">
+    <% messages.forEach((message, index)=> { %>
+      <p class="message-text">
+        <%= message.text %>
+          <a href="/message_details/<%= index %>">
+            <button class="secondary-btn">See more...</button>
+          </a>
+      </p>
+      <% }); %>
+  </div>
+</body>
+
+</html>
